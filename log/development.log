@@ -1,0 +1,748 @@
+  [1m[35m (498.4ms)[0m  [1m[35mCREATE DATABASE "TestActionMailer_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (312.7ms)[0m  [1m[35mCREATE DATABASE "TestActionMailer_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1360866512495225925)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200511080603)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200511080603_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200511080603"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-11 08:15:32.036011"], ["updated_at", "2020-05-11 08:15:32.036011"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1360866512495225925)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Anais"], ["email", "anais.nowak@gmail.com"], ["created_at", "2020-05-11 08:51:17.593100"], ["updated_at", "2020-05-11 08:51:17.593100"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 192.3ms
+Sent mail to anais.nowak@gmail.com (39.8ms)
+Date: Mon, 11 May 2020 10:51:17 +0200
+From: no-reply@monsite.fr
+To: anais.nowak@gmail.com
+Message-ID: <5eb91205f065c_1af94d933816039@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb91205eed13_1af94d933815937";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb91205eed13_1af94d933815937
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgQW5haXMgZXQgYmllbnZlbnVlIGNoZXogbm91cyAhDQo9PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0N
+Cg0KVHUgdCdlcyBpbnNjcml0IHN1ciBtb25zaXRlLmZyIGVuIHV0aWxpc2Fu
+dCBsJ2VtYWlsIHN1aXZhbnQgOiBhbmFpcy5ub3dha0BnbWFpbC5jb20NCg0K
+UG91ciBhY2PDqWRlciDDoCB0b24gZXNwYWNlIGNsaWVudCwgY29ubmVjdGUt
+dG9pIHZpYSBodHRwOi8vbW9uc2l0ZS5mci5sb2dpbi4NCg0KQSB0csOocyB2
+aXRlIHN1ciBtb25zaXRlLmZyIA0KDQo=
+
+----==_mimepart_5eb91205eed13_1af94d933815937
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : anais.=
+nowak@gmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb91205eed13_1af94d933815937--
+
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette"], ["email", "pimpinette@yopmail.com"], ["created_at", "2020-05-11 10:14:22.355602"], ["updated_at", "2020-05-11 10:14:22.355602"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 222.0ms
+Sent mail to pimpinette@yopmail.com (8.7ms)
+Date: Mon, 11 May 2020 12:14:22 +0200
+From: no-reply@monsite.fr
+To: pimpinette@yopmail.com
+Message-ID: <5eb9257e95c36_290bc1933c22045@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb9257e941a8_290bc1933c21985";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb9257e941a8_290bc1933c21985
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZSBldCBiaWVudmVudWUgY2hleiBub3VzICENCj09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PQ0KDQpUdSB0J2VzIGluc2NyaXQgc3VyIG1vbnNpdGUuZnIgZW4gdXRp
+bGlzYW50IGwnZW1haWwgc3VpdmFudCA6IHBpbXBpbmV0dGVAeW9wbWFpbC5j
+b20NCg0KUG91ciBhY2PDqWRlciDDoCB0b24gZXNwYWNlIGNsaWVudCwgY29u
+bmVjdGUtdG9pIHZpYSBodHRwOi8vbW9uc2l0ZS5mci5sb2dpbi4NCg0KQSB0
+csOocyB2aXRlIHN1ciBtb25zaXRlLmZyIA0KDQo=
+
+----==_mimepart_5eb9257e941a8_290bc1933c21985
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb9257e941a8_290bc1933c21985--
+
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette"], ["email", "pimpinette@yopmail.com"], ["created_at", "2020-05-11 10:17:26.607196"], ["updated_at", "2020-05-11 10:17:26.607196"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.0ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 10.5ms
+Sent mail to pimpinette@yopmail.com (2.8ms)
+Date: Mon, 11 May 2020 12:17:26 +0200
+From: no-reply@monsite.fr
+To: pimpinette@yopmail.com
+Message-ID: <5eb9263697714_290bc1933c2228c@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb9263696cf0_290bc1933c221b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb9263696cf0_290bc1933c221b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZSBldCBiaWVudmVudWUgY2hleiBub3VzICENCj09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PQ0KDQpUdSB0J2VzIGluc2NyaXQgc3VyIG1vbnNpdGUuZnIgZW4gdXRp
+bGlzYW50IGwnZW1haWwgc3VpdmFudCA6IHBpbXBpbmV0dGVAeW9wbWFpbC5j
+b20NCg0KUG91ciBhY2PDqWRlciDDoCB0b24gZXNwYWNlIGNsaWVudCwgY29u
+bmVjdGUtdG9pIHZpYSBodHRwOi8vbW9uc2l0ZS5mci5sb2dpbi4NCg0KQSB0
+csOocyB2aXRlIHN1ciBtb25zaXRlLmZyIA0KDQo=
+
+----==_mimepart_5eb9263696cf0_290bc1933c221b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb9263696cf0_290bc1933c221b--
+
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette"], ["email", "pimpinette1@yopmail.com"], ["created_at", "2020-05-11 10:17:43.460267"], ["updated_at", "2020-05-11 10:17:43.460267"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.0ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 11.6ms
+Sent mail to pimpinette1@yopmail.com (3.7ms)
+Date: Mon, 11 May 2020 12:17:43 +0200
+From: no-reply@monsite.fr
+To: pimpinette1@yopmail.com
+Message-ID: <5eb9264773d30_290bc1933c22446@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb9264772cb2_290bc1933c223ad";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb9264772cb2_290bc1933c223ad
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZSBldCBiaWVudmVudWUgY2hleiBub3VzICENCj09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PQ0KDQpUdSB0J2VzIGluc2NyaXQgc3VyIG1vbnNpdGUuZnIgZW4gdXRp
+bGlzYW50IGwnZW1haWwgc3VpdmFudCA6IHBpbXBpbmV0dGUxQHlvcG1haWwu
+Y29tDQoNClBvdXIgYWNjw6lkZXIgw6AgdG9uIGVzcGFjZSBjbGllbnQsIGNv
+bm5lY3RlLXRvaSB2aWEgaHR0cDovL21vbnNpdGUuZnIubG9naW4uDQoNCkEg
+dHLDqHMgdml0ZSBzdXIgbW9uc2l0ZS5mciANCg0K
+
+----==_mimepart_5eb9264772cb2_290bc1933c223ad
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette1@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb9264772cb2_290bc1933c223ad--
+
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette"], ["email", "pimpinette1@yopmail.com"], ["created_at", "2020-05-11 10:31:43.802565"], ["updated_at", "2020-05-11 10:31:43.802565"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.8ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.4ms)
+UserMailer#welcome_email: processed outbound mail in 177.4ms
+Sent mail to pimpinette1@yopmail.com (5.4ms)
+Date: Mon, 11 May 2020 12:31:44 +0200
+From: no-reply@monsite.fr
+To: pimpinette1@yopmail.com
+Message-ID: <5eb92990f97_2aa38a933c43895@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb9298ff4054_2aa38a933c437ad";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb9298ff4054_2aa38a933c437ad
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZSBldCBiaWVudmVudWUgY2hleiBub3VzICENCj09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PQ0KDQpUdSB0J2VzIGluc2NyaXQgc3VyIG1vbnNpdGUuZnIgZW4gdXRp
+bGlzYW50IGwnZW1haWwgc3VpdmFudCA6IHBpbXBpbmV0dGUxQHlvcG1haWwu
+Y29tDQoNClBvdXIgYWNjw6lkZXIgw6AgdG9uIGVzcGFjZSBjbGllbnQsIGNv
+bm5lY3RlLXRvaSB2aWEgaHR0cDovL21vbnNpdGUuZnIubG9naW4uDQoNCkEg
+dHLDqHMgdml0ZSBzdXIgbW9uc2l0ZS5mciANCg0K
+
+----==_mimepart_5eb9298ff4054_2aa38a933c437ad
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette1@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb9298ff4054_2aa38a933c437ad--
+
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (13.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (8.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette2"], ["email", "pimpinette2@yopmail.com"], ["created_at", "2020-05-11 11:50:38.994351"], ["updated_at", "2020-05-11 11:50:38.994351"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+UserMailer#welcome_email: processed outbound mail in 15.3ms
+Sent mail to pimpinette2@yopmail.com (21.2ms)
+Date: Mon, 11 May 2020 13:50:39 +0200
+From: no-reply@monsite.fr
+To: pimpinette2@yopmail.com
+Message-ID: <5eb93c0f64ac_2aa38a933c44098@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb93c0f503e_2aa38a933c43946";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb93c0f503e_2aa38a933c43946
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZTIgZXQgYmllbnZlbnVlIGNoZXogbm91cyAhDQo9
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT0NCg0KVHUgdCdlcyBpbnNjcml0IHN1ciBtb25zaXRlLmZyIGVuIHV0
+aWxpc2FudCBsJ2VtYWlsIHN1aXZhbnQgOiBwaW1waW5ldHRlMkB5b3BtYWls
+LmNvbQ0KDQpQb3VyIGFjY8OpZGVyIMOgIHRvbiBlc3BhY2UgY2xpZW50LCBj
+b25uZWN0ZS10b2kgdmlhIGh0dHA6Ly9tb25zaXRlLmZyLmxvZ2luLg0KDQpB
+IHRyw6hzIHZpdGUgc3VyIG1vbnNpdGUuZnIgDQoNCg==
+
+----==_mimepart_5eb93c0f503e_2aa38a933c43946
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette2@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb93c0f503e_2aa38a933c43946--
+
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette3"], ["email", "pimpinette3@yopmail.com"], ["created_at", "2020-05-11 16:38:53.808202"], ["updated_at", "2020-05-11 16:38:53.808202"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.2ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 199.6ms
+Sent mail to pimpinette3@yopmail.com (26.0ms)
+Date: Mon, 11 May 2020 18:38:54 +0200
+From: no-reply@monsite.fr
+To: pimpinette3@yopmail.com
+Message-ID: <5eb97f9e10727_3ebd4333347661f@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb97f9eddb2_3ebd433334765d8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb97f9eddb2_3ebd433334765d8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZTMgZXQgYmllbnZlbnVlIGNoZXogbm91cyAhDQo9
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT0NCg0KVHUgdCdlcyBpbnNjcml0IHN1ciBtb25zaXRlLmZyIGVuIHV0
+aWxpc2FudCBsJ2VtYWlsIHN1aXZhbnQgOiBwaW1waW5ldHRlM0B5b3BtYWls
+LmNvbQ0KDQpQb3VyIGFjY8OpZGVyIMOgIHRvbiBlc3BhY2UgY2xpZW50LCBj
+b25uZWN0ZS10b2kgdmlhIGh0dHA6Ly9tb25zaXRlLmZyLmxvZ2luLg0KDQpB
+IHRyw6hzIHZpdGUgc3VyIG1vbnNpdGUuZnIgDQoNCg==
+
+----==_mimepart_5eb97f9eddb2_3ebd433334765d8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette3@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb97f9eddb2_3ebd433334765d8--
+
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette4"], ["email", "pimpinette4@yopmail.com"], ["created_at", "2020-05-11 16:41:32.514480"], ["updated_at", "2020-05-11 16:41:32.514480"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.9ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 201.3ms
+Sent mail to pimpinette4@yopmail.com (18.9ms)
+Date: Mon, 11 May 2020 18:41:32 +0200
+From: no-reply@monsite.fr
+To: pimpinette4@yopmail.com
+Message-ID: <5eb9803cb609d_3f334333347669@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb9803cb4088_3f33433334765a1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb9803cb4088_3f33433334765a1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZTQgZXQgYmllbnZlbnVlIGNoZXogbm91cyAhDQo9
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT0NCg0KVHUgdCdlcyBpbnNjcml0IHN1ciBtb25zaXRlLmZyIGVuIHV0
+aWxpc2FudCBsJ2VtYWlsIHN1aXZhbnQgOiBwaW1waW5ldHRlNEB5b3BtYWls
+LmNvbQ0KDQpQb3VyIGFjY8OpZGVyIMOgIHRvbiBlc3BhY2UgY2xpZW50LCBj
+b25uZWN0ZS10b2kgdmlhIGh0dHA6Ly9tb25zaXRlLmZyLmxvZ2luLg0KDQpB
+IHRyw6hzIHZpdGUgc3VyIG1vbnNpdGUuZnIgDQoNCg==
+
+----==_mimepart_5eb9803cb4088_3f33433334765a1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette4@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb9803cb4088_3f33433334765a1--
+
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pimpinette5"], ["email", "pimpinette5@yopmail.com"], ["created_at", "2020-05-11 17:22:35.011773"], ["updated_at", "2020-05-11 17:22:35.011773"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+UserMailer#welcome_email: processed outbound mail in 202.8ms
+Sent mail to pimpinette5@yopmail.com (18.6ms)
+Date: Mon, 11 May 2020 19:22:35 +0200
+From: anais.nowak@gmail.com
+To: pimpinette5@yopmail.com
+Message-ID: <5eb989db3cb4c_4296fa13387985c@anaisnwk-VirtualBox.mail>
+Subject: Bienvenue chez nous !
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5eb989db3a8fe_4296fa13387972b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5eb989db3a8fe_4296fa13387972b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+U2FsdXQgcGltcGluZXR0ZTUgZXQgYmllbnZlbnVlIGNoZXogbm91cyAhDQo9
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT0NCg0KVHUgdCdlcyBpbnNjcml0IHN1ciBtb25zaXRlLmZyIGVuIHV0
+aWxpc2FudCBsJ2VtYWlsIHN1aXZhbnQgOiBwaW1waW5ldHRlNUB5b3BtYWls
+LmNvbQ0KDQpQb3VyIGFjY8OpZGVyIMOgIHRvbiBlc3BhY2UgY2xpZW50LCBj
+b25uZWN0ZS10b2kgdmlhIGh0dHA6Ly9tb25zaXRlLmZyLmxvZ2luLg0KDQpB
+IHRyw6hzIHZpdGUgc3VyIG1vbnNpdGUuZnIgDQoNCg==
+
+----==_mimepart_5eb989db3a8fe_4296fa13387972b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+=0D
+<head>=0D
+	<meta content=3D'text/html; chartset=3DUTF-8' http-equiv=3D'Content-Type=
+' />=0D
+</head>=0D
+=0D
+<body>=0D
+=0D
+	<h1> Salut  et bienvenue chez nous ! </h1>=0D
+=0D
+	<p> Tu t'es inscrit sur monsite.fr en utilisant l'email suivant : pimpin=
+ette5@yopmail.com </p>=0D
+=0D
+	<p> Pour acc=C3=A9der =C3=A0 ton espace client, connecte-toi via http://=
+monsite.fr.login. </p>=0D
+=0D
+	<p> A tr=C3=A8s vite sur monsite.fr </p>=0D
+=0D
+</body>=0D
+=0D
+=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5eb989db3a8fe_4296fa13387972b--
+
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE DATABASE "TestActionMailer_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "TestActionMailer_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
